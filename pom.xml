@@ -34,13 +34,12 @@
     <JACOCO-MAVEN-PLUGIN.VERSION>0.8.4</JACOCO-MAVEN-PLUGIN.VERSION>
     <MAVEN-JAVADOC-PLUGIN.VERSION>3.1.1</MAVEN-JAVADOC-PLUGIN.VERSION>
     <MAVEN-SOURCE-PLUGIN.VERSION>3.0.1</MAVEN-SOURCE-PLUGIN.VERSION>
-    <MAVEN-SUREFIRE-PLUGIN.VERSION>2.22.1</MAVEN-SUREFIRE-PLUGIN.VERSION>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <MAVEN-COMPILER-PLUGIN.VERSION>3.1</MAVEN-COMPILER-PLUGIN.VERSION>
     <MAVEN-COMPILER-PLUGIN.SOURCE>8</MAVEN-COMPILER-PLUGIN.SOURCE>
     <MAVEN-COMPILER-PLUGIN.TARGET>8</MAVEN-COMPILER-PLUGIN.TARGET>
-    <JSON-VALUES.VERSION>8.4.0</JSON-VALUES.VERSION>
-    <MONGO-JAVA-DRIVER.VERSION>4.1.1</MONGO-JAVA-DRIVER.VERSION>
+    <JSON-VALUES.VERSION>10.0.0</JSON-VALUES.VERSION>
+    <MONGO-JAVA-DRIVER.VERSION>4.0.0</MONGO-JAVA-DRIVER.VERSION>
   </properties>
 
   <build>
@@ -53,11 +52,6 @@
           <source>${MAVEN-COMPILER-PLUGIN.SOURCE}</source>
           <target>${MAVEN-COMPILER-PLUGIN.TARGET}</target>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>${MAVEN-SUREFIRE-PLUGIN.VERSION}</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -77,7 +71,6 @@
       </plugin>
     </plugins>
   </build>
-
   <dependencies>
     <dependency>
       <groupId>org.mongodb</groupId>
@@ -88,24 +81,6 @@
       <groupId>com.github.imrafaelmerino</groupId>
       <artifactId>json-values</artifactId>
       <version>${JSON-VALUES.VERSION}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.6.2</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.29</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-nop</artifactId>
-      <version>1.7.29</version>
-      <scope>test</scope>
     </dependency>
   </dependencies>
   <profiles>

@@ -11,52 +11,53 @@ import org.bson.codecs.DecoderContext;
 import org.bson.codecs.EncoderContext;
 import org.bson.codecs.configuration.CodecRegistry;
 
-import java.util.Iterator;
 
-class JsArrayCodec extends JsonCodec implements Codec<JsArray>  {
+class JsArrayCodec extends JsonCodec implements Codec<JsArray> {
 
-  public JsArrayCodec(final CodecRegistry registry,
-                      final BsonTypeClassMap bsonTypeClassMap) {
-    super(registry,
-          bsonTypeClassMap
-         );
-  }
-
-  @Override
-  public JsArray decode(final BsonReader reader,
-                        final DecoderContext context) {
-    reader.readStartArray();
-
-    JsArray array = JsArray.empty();
-    while (reader.readBsonType() != BsonType.END_OF_DOCUMENT) {
-      array = array.append((readValue(reader, context)));
+    public JsArrayCodec(final CodecRegistry registry,
+                        final BsonTypeClassMap bsonTypeClassMap) {
+        super(registry,
+              bsonTypeClassMap
+        );
     }
 
-    reader.readEndArray();
+    @Override
+    public JsArray decode(final BsonReader reader,
+                          final DecoderContext context) {
+        reader.readStartArray();
 
-    return array;
-  }
+        JsArray array = JsArray.empty();
+        while (reader.readBsonType() != BsonType.END_OF_DOCUMENT) {
+            array = array.append(readValue(reader,
+                                           context));
+        }
 
-  @Override
-  public void encode(final BsonWriter writer,
-                     final JsArray array,
-                     final EncoderContext context) {
+        reader.readEndArray();
 
-    writer.writeStartArray();
-
-    for (Iterator<JsValue> it = array.iterator(); it.hasNext(); ) {
-      final JsValue value = it.next();
-      Codec codec = registry.get(value.getClass());
-      context.encodeWithChildContext(codec,
-                                     writer,
-                                     value
-                                    );
+        return array;
     }
-    writer.writeEndArray();
-  }
 
-  @Override
-  public Class<JsArray> getEncoderClass() {
-    return JsArray.class;
-  }
+    @Override
+    public void encode(final BsonWriter writer,
+                       final JsArray array,
+                       final EncoderContext context) {
+
+        writer.writeStartArray();
+
+        for (JsValue value : array) {
+            @SuppressWarnings("unchecked")
+            Codec<JsValue> codec = (Codec<JsValue>) registry.get(value.getClass());
+            if (codec == null) throw new IllegalStateException("No codec were found for " + value.getClass());
+            context.encodeWithChildContext(codec,
+                                           writer,
+                                           value
+            );
+        }
+        writer.writeEndArray();
+    }
+
+    @Override
+    public Class<JsArray> getEncoderClass() {
+        return JsArray.class;
+    }
 }

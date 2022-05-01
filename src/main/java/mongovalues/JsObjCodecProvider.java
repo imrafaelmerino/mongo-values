@@ -8,17 +8,19 @@ import org.bson.codecs.configuration.CodecRegistry;
 
 class JsObjCodecProvider implements CodecProvider {
 
-    private BsonTypeClassMap typeClassMap;
+    private final BsonTypeClassMap typeClassMap;
 
     public JsObjCodecProvider(final BsonTypeClassMap typeClassMap) {
         this.typeClassMap = typeClassMap;
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public <T> Codec<T> get(final Class<T> aclass,
                             final CodecRegistry codecRegistry) {
         if (aclass == JsObj.class) {
-            return (Codec<T>) new JsObjCodec(codecRegistry, typeClassMap);
+            return (Codec<T>) new JsObjCodec(codecRegistry,
+                                             typeClassMap);
         }
         return null;
     }

@@ -20,7 +20,7 @@ abstract class JsonCodec {
 
   CodecRegistry registry;
   BsonTypeClassMap bsonTypeClassMap;
-  private BsonTypeCodecMap bsonTypeCodecMap;
+  private final BsonTypeCodecMap bsonTypeCodecMap;
 
 
   public JsonCodec(final CodecRegistry registry,
@@ -50,6 +50,7 @@ abstract class JsonCodec {
       return JsInstant.of(Instant.ofEpochMilli(value));
     }
 
+    @SuppressWarnings("unchecked")
     Codec<JsValue> codec = (Codec<JsValue>) bsonTypeCodecMap.get(bsonType);
     if(codec==null) throw new IllegalArgumentException("The bson type "+bsonType.name()+" is not supported");
     return codec.decode(reader,
