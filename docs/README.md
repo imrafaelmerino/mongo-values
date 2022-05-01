@@ -1,5 +1,6 @@
 [![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/0.7)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/0.7/jar)
-[![](https://jitpack.io/v/imrafaelmerino/mongo-values.svg)](https://jitpack.io/#imrafaelmerino/mongo-values)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=imrafaelmerino_json-values&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=imrafaelmerino_mongo-values)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=imrafaelmerino_json-values&metric=alert_status)](https://sonarcloud.io/dashboard?id=imrafaelmerino_mongo-values)
 
 - [Introduction](#intro)
 - [Requirements](#requirements)
