@@ -6,7 +6,7 @@
   <groupId>com.github.imrafaelmerino</groupId>
   <artifactId>mongo-values</artifactId>
   <packaging>jar</packaging>
-  <version>0.6</version>
+  <version>0.7</version>
   <name>mongo-values</name>
   <description>Set of codecs to add support for json-values in the java mongo driver, abstracting the process of decoding a BSON into a JsObj and encoding a JsObj into a BSON.</description>
   <url>https://github.com/imrafaelmerino/mongo-values</url>

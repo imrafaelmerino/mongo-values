@@ -1,6 +1,4 @@
-[![Build Status](https://app.travis-ci.com/imrafaelmerino/mongo-values.svg?branch=master)](https://app.travis-ci.com/imrafaelmerino/mongo-values)
-[![Javadocs](https://www.javadoc.io/badge/com.github.imrafaelmerino/mongo-values.svg)](https://www.javadoc.io/doc/com.github.imrafaelmerino/mongo-values)
-[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/0.6)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/0.6/jar)
+[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/0.7)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/0.7/jar)
 [![](https://jitpack.io/v/imrafaelmerino/mongo-values.svg)](https://jitpack.io/#imrafaelmerino/mongo-values)
 
 - [Introduction](#intro)
@@ -16,7 +14,7 @@ BsonReader and encoding a JsValue into a BSON value using a BsonWriter.
 Please find below the supported BSON types and their json-value equivalents:
 
 ```java    
-
+    
 Map<BsonType, Class<?>> map = new HashMap<>();
 map.put(BsonType.NULL, JsNull.class);
 map.put(BsonType.ARRAY, JsArray.class);
@@ -78,7 +76,7 @@ MongoCollection<JsObj> collection = mongoClient.getCollection("db","collection")
 <dependency>
   <groupId>com.github.imrafaelmerino</groupId>
   <artifactId>mongo-values</artifactId>
-  <version>0.6</version>
+  <version>0.7</version>
 </dependency>
 
 ```
