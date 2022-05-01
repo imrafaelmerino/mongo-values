@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/imrafaelmerino/mongo-values.svg?branch=master)](https://travis-ci.org/imrafaelmerino/mongo-values)
-[![CircleCI](https://circleci.com/gh/imrafaelmerino/mongo-values/tree/master.svg)](https://circleci.com/gh/imrafaelmerino/mongo-values/tree/master)
-
+[![Build Status](https://app.travis-ci.com/imrafaelmerino/mongo-values.svg?branch=master)](https://app.travis-ci.com/imrafaelmerino/mongo-values)
 [![Javadocs](https://www.javadoc.io/badge/com.github.imrafaelmerino/mongo-values.svg)](https://www.javadoc.io/doc/com.github.imrafaelmerino/mongo-values)
 [![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/0.6)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/0.6/jar)
 [![](https://jitpack.io/v/imrafaelmerino/mongo-values.svg)](https://jitpack.io/#imrafaelmerino/mongo-values)
