@@ -20,7 +20,7 @@ class JsObjCodecProvider implements CodecProvider {
                             final CodecRegistry codecRegistry) {
         if (aclass == JsObj.class) {
             return (Codec<T>) new JsObjCodec(codecRegistry,
-                                             typeClassMap);
+                    typeClassMap);
         }
         return null;
     }

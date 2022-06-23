@@ -11,15 +11,16 @@ import org.bson.codecs.EncoderContext;
 class JsBoolCodec implements Codec<JsBool> {
 
     private static final BooleanCodec boolCodec = new BooleanCodec();
+
     @Override
     public void encode(final BsonWriter writer, final JsBool jsBool, final EncoderContext encoderContext) {
-       boolCodec.encode(writer,jsBool.value,encoderContext);
+        boolCodec.encode(writer, jsBool.value, encoderContext);
     }
 
     @Override
     public JsBool decode(final BsonReader reader, final DecoderContext decoderContext) {
         return boolCodec.decode(reader,
-                                decoderContext) ? JsBool.TRUE : JsBool.FALSE;
+                decoderContext) ? JsBool.TRUE : JsBool.FALSE;
 
     }
 

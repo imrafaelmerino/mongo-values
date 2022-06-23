@@ -12,16 +12,17 @@ import org.bson.codecs.LongCodec;
 class JsLongCodec implements Codec<JsLong> {
 
     private static final LongCodec longCodec = new LongCodec();
+
     @Override
     public void encode(final BsonWriter writer, final JsLong jsLong, final EncoderContext encoderContext) {
-       longCodec.encode(writer, jsLong.value, encoderContext);
+        longCodec.encode(writer, jsLong.value, encoderContext);
     }
 
     @Override
     public JsLong decode(final BsonReader reader, final DecoderContext decoderContext) {
         return JsLong.of(longCodec.decode(reader,
-                                          decoderContext)
-                       );
+                decoderContext)
+        );
     }
 
     @Override

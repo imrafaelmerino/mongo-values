@@ -17,44 +17,43 @@ import java.time.Instant;
 
 abstract class JsonCodec {
 
+    private final BsonTypeCodecMap bsonTypeCodecMap;
+    CodecRegistry registry;
+    BsonTypeClassMap bsonTypeClassMap;
 
-  CodecRegistry registry;
-  BsonTypeClassMap bsonTypeClassMap;
-  private final BsonTypeCodecMap bsonTypeCodecMap;
 
-
-  public JsonCodec(final CodecRegistry registry,
-                   final BsonTypeClassMap bsonTypeClassMap) {
-    this.registry = registry;
-    this.bsonTypeClassMap = bsonTypeClassMap;
-    this.bsonTypeCodecMap = new BsonTypeCodecMap(bsonTypeClassMap,
-                                                 registry
-    );
-  }
-
-  protected JsValue readValue(final BsonReader reader,
-                              final DecoderContext context) {
-
-    BsonType bsonType = reader.getCurrentBsonType();
-
-    if (bsonType == BsonType.OBJECT_ID) {
-      ObjectId objectId = reader.readObjectId();
-      return JsStr.of(objectId.toHexString());
+    public JsonCodec(final CodecRegistry registry,
+                     final BsonTypeClassMap bsonTypeClassMap) {
+        this.registry = registry;
+        this.bsonTypeClassMap = bsonTypeClassMap;
+        this.bsonTypeCodecMap = new BsonTypeCodecMap(bsonTypeClassMap,
+                registry
+        );
     }
 
-    //not supported for writing, date-time is the format supported
-    // for reading is transformed into an instant
-    if(bsonType == BsonType.TIMESTAMP){
-      long value = reader.readTimestamp()
-                         .getValue();
-      return JsInstant.of(Instant.ofEpochMilli(value));
-    }
+    protected JsValue readValue(final BsonReader reader,
+                                final DecoderContext context) {
 
-    @SuppressWarnings("unchecked")
-    Codec<JsValue> codec = (Codec<JsValue>) bsonTypeCodecMap.get(bsonType);
-    if(codec==null) throw new IllegalArgumentException("The bson type "+bsonType.name()+" is not supported");
-    return codec.decode(reader,
-                        context
-                       );
-  }
+        BsonType bsonType = reader.getCurrentBsonType();
+
+        if (bsonType == BsonType.OBJECT_ID) {
+            ObjectId objectId = reader.readObjectId();
+            return JsStr.of(objectId.toHexString());
+        }
+
+        //not supported for writing, date-time is the format supported
+        // for reading is transformed into an instant
+        if (bsonType == BsonType.TIMESTAMP) {
+            long value = reader.readTimestamp()
+                    .getValue();
+            return JsInstant.of(Instant.ofEpochMilli(value));
+        }
+
+        @SuppressWarnings("unchecked")
+        Codec<JsValue> codec = (Codec<JsValue>) bsonTypeCodecMap.get(bsonType);
+        if (codec == null) throw new IllegalArgumentException("The bson type " + bsonType.name() + " is not supported");
+        return codec.decode(reader,
+                context
+        );
+    }
 }

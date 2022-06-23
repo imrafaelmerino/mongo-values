@@ -13,8 +13,6 @@ import org.bson.codecs.EncoderContext;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.types.ObjectId;
 
-import java.util.Iterator;
-
 
 class JsObjCodec extends JsonCodec implements Codec<JsObj> {
 
@@ -23,8 +21,8 @@ class JsObjCodec extends JsonCodec implements Codec<JsObj> {
     public JsObjCodec(final CodecRegistry registry,
                       final BsonTypeClassMap bsonTypeClassMap) {
         super(registry,
-              bsonTypeClassMap
-             );
+                bsonTypeClassMap
+        );
     }
 
     @Override
@@ -37,10 +35,10 @@ class JsObjCodec extends JsonCodec implements Codec<JsObj> {
         while (reader.readBsonType() != BsonType.END_OF_DOCUMENT) {
             String fieldName = reader.readName();
             obj = obj.set(fieldName,
-                          readValue(reader,
-                                    context
-                                   )
-                         );
+                    readValue(reader,
+                            context
+                    )
+            );
         }
 
         reader.readEndDocument();
@@ -59,18 +57,17 @@ class JsObjCodec extends JsonCodec implements Codec<JsObj> {
 
         if (id.isNothing()) {
             encodeObj(writer,
-                      obj,
-                      context
-                     );
-        }
-        else {
+                    obj,
+                    context
+            );
+        } else {
             boolean encoded = encodeObjId(writer,
-                                          id
-                                         );
+                    id
+            );
             encodeObj(writer,
-                      encoded ? obj.delete(ID_FIELD_NAME) : obj,
-                      context
-                     );
+                    encoded ? obj.delete(ID_FIELD_NAME) : obj,
+                    context
+            );
         }
         writer.writeEndDocument();
     }
@@ -80,7 +77,7 @@ class JsObjCodec extends JsonCodec implements Codec<JsObj> {
         if (value.isObj(o -> o.containsKey("$oid"))) {
             writer.writeName(ID_FIELD_NAME);
             writer.writeObjectId(new ObjectId(value.toJsObj()
-                                                   .getStr("$oid")));
+                    .getStr("$oid")));
             return true;
         }
         return false;
@@ -95,8 +92,8 @@ class JsObjCodec extends JsonCodec implements Codec<JsObj> {
             Codec<JsValue> codec = (Codec<JsValue>) registry.get(entry._2.getClass());
             if (codec == null) throw new IllegalStateException("No codec were found for " + entry._2.getClass());
             context.encodeWithChildContext(codec,
-                                           writer,
-                                           entry._2
+                    writer,
+                    entry._2
             );
         }
     }

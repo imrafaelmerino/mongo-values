@@ -1,4 +1,5 @@
 package mongovalues;
+
 import jsonvalues.JsNull;
 import org.bson.BsonReader;
 import org.bson.BsonWriter;
@@ -10,7 +11,7 @@ class JsNullCodec implements Codec<JsNull> {
 
     @Override
     public void encode(final BsonWriter writer, final JsNull jsNull, final EncoderContext encoderContext) {
-      writer.writeNull();
+        writer.writeNull();
     }
 
     @Override

@@ -1,4 +1,4 @@
-[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/0.7)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/0.7/jar)
+[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/0.8)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/0.8/jar)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=imrafaelmerino_json-values&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=imrafaelmerino_mongo-values)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=imrafaelmerino_json-values&metric=alert_status)](https://sonarcloud.io/dashboard?id=imrafaelmerino_mongo-values)
 
@@ -36,10 +36,10 @@ that they encode from and decode to
 
 Just register the registry **JsValuesRegistry**, that contains the necessary codecs, and
 when defining the collection, specify the generic type **JsObj**.
-You can use the mongo API **without doing any kind of conversion between BSON and JsObj**:
+You can use the MongoDB API **without doing any kind of conversion between BSON and JsObj**:
 
 
-```java
+```   java
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import mongovalues.JsValuesRegistry;
@@ -60,7 +60,7 @@ MongoClientSettings  settings =
 MongoClient mongoClient = result = MongoClients.create(settings);
 
 MongoCollection<JsObj> collection = mongoClient.getCollection("db","collection");
-                                                                                                      "Data"
+                                                                                             
 ``` 
 
 
@@ -77,7 +77,7 @@ MongoCollection<JsObj> collection = mongoClient.getCollection("db","collection")
 <dependency>
   <groupId>com.github.imrafaelmerino</groupId>
   <artifactId>mongo-values</artifactId>
-  <version>0.7</version>
+  <version>0.8</version>
 </dependency>
 
 ```
