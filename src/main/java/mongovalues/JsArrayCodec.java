@@ -16,9 +16,7 @@ class JsArrayCodec extends JsonCodec implements Codec<JsArray> {
 
     public JsArrayCodec(final CodecRegistry registry,
                         final BsonTypeClassMap bsonTypeClassMap) {
-        super(registry,
-              bsonTypeClassMap
-        );
+        super(registry, bsonTypeClassMap);
     }
 
     @Override
@@ -29,7 +27,7 @@ class JsArrayCodec extends JsonCodec implements Codec<JsArray> {
         JsArray array = JsArray.empty();
         while (reader.readBsonType() != BsonType.END_OF_DOCUMENT) {
             array = array.append(readValue(reader,
-                                           context));
+                    context));
         }
 
         reader.readEndArray();
@@ -49,8 +47,8 @@ class JsArrayCodec extends JsonCodec implements Codec<JsArray> {
             Codec<JsValue> codec = (Codec<JsValue>) registry.get(value.getClass());
             if (codec == null) throw new IllegalStateException("No codec were found for " + value.getClass());
             context.encodeWithChildContext(codec,
-                                           writer,
-                                           value
+                    writer,
+                    value
             );
         }
         writer.writeEndArray();

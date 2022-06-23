@@ -2,3 +2,4 @@
 target
 deploy.sh
 settings.xml
+sonar.sh
