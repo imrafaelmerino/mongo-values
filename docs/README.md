@@ -1,4 +1,4 @@
-[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/0.9.1)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/0.9.1/jar)
+[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/0.9.2)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/0.9.2/jar)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=imrafaelmerino_json-values&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=imrafaelmerino_mongo-values)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=imrafaelmerino_json-values&metric=alert_status)](https://sonarcloud.io/dashboard?id=imrafaelmerino_mongo-values)
 
@@ -66,8 +66,8 @@ MongoCollection<JsObj> collection = mongoClient.getCollection("db","collection")
 
 ## <a name="requirements"><a/> Requirements 
 
-   -  Java 8 or greater
-   -  [mongo driver sync](https://mongodb.github.io/mongo-java-driver/4.1/whats-new/)
+   - Java 8 or greater
+   - mongodb-driver-core dependency
 
 ## <a name="installation"><a/> Installation 
 
@@ -77,7 +77,7 @@ MongoCollection<JsObj> collection = mongoClient.getCollection("db","collection")
 <dependency>
   <groupId>com.github.imrafaelmerino</groupId>
   <artifactId>mongo-values</artifactId>
-  <version>0.9.1</version>
+  <version>0.9.2</version>
 </dependency>
 
 ```
