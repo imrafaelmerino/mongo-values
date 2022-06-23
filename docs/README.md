@@ -1,4 +1,4 @@
-[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/0.8)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/0.8/jar)
+[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/0.9)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/0.9/jar)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=imrafaelmerino_json-values&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=imrafaelmerino_mongo-values)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=imrafaelmerino_json-values&metric=alert_status)](https://sonarcloud.io/dashboard?id=imrafaelmerino_mongo-values)
 
@@ -77,7 +77,7 @@ MongoCollection<JsObj> collection = mongoClient.getCollection("db","collection")
 <dependency>
   <groupId>com.github.imrafaelmerino</groupId>
   <artifactId>mongo-values</artifactId>
-  <version>0.8</version>
+  <version>0.9</version>
 </dependency>
 
 ```
