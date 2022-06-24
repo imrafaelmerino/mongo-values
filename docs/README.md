@@ -11,7 +11,7 @@
 ## <a name="intro"><a/> Introduction 
 
 It provides a set of codecs to work with [json-values](https://github.com/imrafaelmerino/json-values)
-The codecs abstracts the processes of decoding a BSON value into JsValue  using a 
+The codecs abstract the processes of decoding a BSON value into JsValue  using a 
 BsonReader and encoding a JsValue into a BSON value using a BsonWriter.
 
 Please find below the supported BSON types and their json-value equivalents:
@@ -36,7 +36,7 @@ map.put(BsonType.STRING, JsStr.class);
 A CodecRegistry contains a set of Codec instances that are accessed according to the Java classes
 that they encode from and decode to
 
-Just register the registry **JsValuesRegistry**, that contains the necessary codecs, and
+Just register the registry **JsValuesRegistry**, which contains the necessary codecs, and
 when defining the collection, specify the generic type **JsObj**.
 You can use the MongoDB API **without doing any kind of conversion between BSON and JsObj**:
 
