@@ -1,7 +1,7 @@
 package mongovalues;
 
-import io.vavr.Tuple2;
 import jsonvalues.JsObj;
+import jsonvalues.JsObjPair;
 import jsonvalues.JsValue;
 import org.bson.BsonReader;
 import org.bson.BsonType;
@@ -86,14 +86,14 @@ class JsObjCodec extends JsonCodec implements Codec<JsObj> {
     private void encodeObj(final BsonWriter writer,
                            final JsObj obj,
                            final EncoderContext context) {
-        for (final Tuple2<String, JsValue> entry : obj) {
-            writer.writeName(entry._1);
+        for (final JsObjPair entry : obj) {
+            writer.writeName(entry.key());
             @SuppressWarnings("unchecked")
-            Codec<JsValue> codec = (Codec<JsValue>) registry.get(entry._2.getClass());
-            if (codec == null) throw new IllegalStateException("No codec were found for " + entry._2.getClass());
+            Codec<JsValue> codec = (Codec<JsValue>) registry.get(entry.value().getClass());
+            if (codec == null) throw new IllegalStateException("No codec were found for " + entry.value().getClass());
             context.encodeWithChildContext(codec,
                     writer,
-                    entry._2
+                    entry.value()
             );
         }
     }
