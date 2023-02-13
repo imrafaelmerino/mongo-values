@@ -10,8 +10,8 @@
 ## <a name="intro"><a/> Introduction 
 
 It provides a set of codecs to work with [json-values](https://github.com/imrafaelmerino/json-values)
-The codecs abstract the processes of decoding a BSON value into JsValue  using a 
-BsonReader and encoding a JsValue into a BSON value using a BsonWriter.
+The codecs abstract the processes of going from BSON to JsValue and the other way around by providing 
+a BsonReader and a BsonWriter.
 
 Please find below the supported BSON types and their json-value equivalents:
 
