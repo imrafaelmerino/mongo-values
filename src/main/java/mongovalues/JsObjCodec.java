@@ -16,18 +16,18 @@ import org.bson.types.ObjectId;
 
 class JsObjCodec extends JsonCodec implements Codec<JsObj> {
 
-    static final String ID_FIELD_NAME = "_id";
-
     public JsObjCodec(final CodecRegistry registry,
-                      final BsonTypeClassMap bsonTypeClassMap) {
+                      final BsonTypeClassMap bsonTypeClassMap
+                     ) {
         super(registry,
-                bsonTypeClassMap
-        );
+              bsonTypeClassMap
+             );
     }
 
     @Override
     public JsObj decode(final BsonReader reader,
-                        final DecoderContext context) {
+                        final DecoderContext context
+                       ) {
 
         JsObj obj = JsObj.empty();
 
@@ -35,10 +35,10 @@ class JsObjCodec extends JsonCodec implements Codec<JsObj> {
         while (reader.readBsonType() != BsonType.END_OF_DOCUMENT) {
             String fieldName = reader.readName();
             obj = obj.set(fieldName,
-                    readValue(reader,
-                            context
-                    )
-            );
+                          readValue(reader,
+                                    context
+                                   )
+                         );
         }
 
         reader.readEndDocument();
@@ -49,52 +49,39 @@ class JsObjCodec extends JsonCodec implements Codec<JsObj> {
     @Override
     public void encode(final BsonWriter writer,
                        final JsObj obj,
-                       final EncoderContext context) {
+                       final EncoderContext context
+                      ) {
 
-        writer.writeStartDocument();
-
-        JsValue id = obj.get(ID_FIELD_NAME);
-
-        if (id.isNothing()) {
-            encodeObj(writer,
-                    obj,
-                    context
-            );
-        } else {
-            boolean encoded = encodeObjId(writer,
-                    id
-            );
-            encodeObj(writer,
-                    encoded ? obj.delete(ID_FIELD_NAME) : obj,
-                    context
-            );
+        if (obj.containsKey("$oid")) {
+            writer.writeObjectId(new ObjectId(obj.getStr("$oid")));
         }
-        writer.writeEndDocument();
-    }
+        else {
 
-    private boolean encodeObjId(final BsonWriter writer,
-                                final JsValue value) {
-        if (value.isObj(o -> o.containsKey("$oid"))) {
-            writer.writeName(ID_FIELD_NAME);
-            writer.writeObjectId(new ObjectId(value.toJsObj()
-                    .getStr("$oid")));
-            return true;
+            writer.writeStartDocument();
+
+
+            encodeObj(writer,
+                      obj,
+                      context
+                     );
+
+            writer.writeEndDocument();
         }
-        return false;
     }
 
     private void encodeObj(final BsonWriter writer,
                            final JsObj obj,
-                           final EncoderContext context) {
+                           final EncoderContext context
+                          ) {
         for (final JsObjPair entry : obj) {
             writer.writeName(entry.key());
             @SuppressWarnings("unchecked")
             Codec<JsValue> codec = (Codec<JsValue>) registry.get(entry.value().getClass());
             if (codec == null) throw new IllegalStateException("No codec were found for " + entry.value().getClass());
             context.encodeWithChildContext(codec,
-                    writer,
-                    entry.value()
-            );
+                                           writer,
+                                           entry.value()
+                                          );
         }
     }
 
