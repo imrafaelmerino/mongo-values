@@ -1,6 +1,6 @@
 <img src="./logo/package_twitter_if9bsyj4/base/full/coverphoto/base_logo_white_background.png" alt="logo"/>
 
-[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/1.0.0)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/1.0.0/jar)
+[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/1.0.2)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/1.0.2/jar)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=imrafaelmerino_json-values&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=imrafaelmerino_mongo-values)
 
 - [Introduction](#intro)
@@ -93,7 +93,7 @@ For Java 17 or higher:
 <dependency>
     <groupId>com.github.imrafaelmerino</groupId>
     <artifactId>vertx-json-values</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 
