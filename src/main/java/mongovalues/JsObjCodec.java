@@ -59,7 +59,6 @@ class JsObjCodec extends JsonCodec implements Codec<JsObj> {
 
             writer.writeStartDocument();
 
-
             encodeObj(writer,
                       obj,
                       context

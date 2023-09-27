@@ -1,6 +1,6 @@
 <img src="./logo/package_twitter_if9bsyj4/base/full/coverphoto/base_logo_white_background.png" alt="logo"/>
 
-[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/0.9.5)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/0.9.5/jar)
+[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/1.0.0)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/1.0.0/jar)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=imrafaelmerino_json-values&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=imrafaelmerino_mongo-values)
 
 - [Introduction](#intro)
@@ -65,20 +65,37 @@ MongoCollection<JsObj> collection = mongoClient.getCollection("db","collection")
 ``` 
 
 
-## <a name="requirements"><a/> Requirements 
+## <a name="requirements"><a/> Requirements
 
-   - Java 8 or greater
-   - mongodb-driver-core dependency
+- For versions prior to 1.0.0, json-values requires Java 8 or later. Please note that only fixes are accepted for these
+  versions.
+- For versions starting from 1.0.0 and beyond, json-values mandates Java 17 or later.
 
-## <a name="installation"><a/> Installation 
+## <a name="inst"><a/> Installation
 
+To include json-values in your project, add the corresponding dependency to your build tool based on your Java version:
+
+For Java 8 or higher:
 
 ```xml
 
 <dependency>
-  <groupId>com.github.imrafaelmerino</groupId>
-  <artifactId>mongo-values</artifactId>
-  <version>0.9.5</version>
+    <groupId>com.github.imrafaelmerino</groupId>
+    <artifactId>mongo-values</artifactId>
+    <version>0.9.5</version>
 </dependency>
-
 ```
+
+For Java 17 or higher:
+
+```xml
+
+<dependency>
+    <groupId>com.github.imrafaelmerino</groupId>
+    <artifactId>vertx-json-values</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+Choose the appropriate version according to your Java runtime.
+
