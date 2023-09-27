@@ -82,7 +82,7 @@ For Java 8 or higher:
 <dependency>
     <groupId>com.github.imrafaelmerino</groupId>
     <artifactId>mongo-values</artifactId>
-    <version>0.9.5</version>
+    <version>0.9.6</version>
 </dependency>
 ```
 
@@ -93,7 +93,7 @@ For Java 17 or higher:
 <dependency>
     <groupId>com.github.imrafaelmerino</groupId>
     <artifactId>vertx-json-values</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 

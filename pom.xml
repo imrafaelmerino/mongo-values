@@ -6,7 +6,7 @@
     <groupId>com.github.imrafaelmerino</groupId>
     <artifactId>mongo-values</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>mongo-values</name>
     <description>Set of codecs to add support for json-values in the Java MongoDB driver, abstracting the process of
         decoding a BSON into a JsObj and encoding a JsObj into a BSON.
@@ -89,7 +89,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Automatic-Module-Name>vertx_values</Automatic-Module-Name>
+                            <Automatic-Module-Name>mongo_values</Automatic-Module-Name>
                         </manifestEntries>
                     </archive>
                 </configuration>
