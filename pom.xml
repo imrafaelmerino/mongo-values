@@ -6,7 +6,7 @@
     <groupId>com.github.imrafaelmerino</groupId>
     <artifactId>mongo-values</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <name>mongo-values</name>
     <description>Set of codecs to add support for json-values in the Java MongoDB driver, abstracting the process of
         decoding a BSON into a JsObj and encoding a JsObj into a BSON.
@@ -42,10 +42,11 @@
         <MAVEN-COMPILER-PLUGIN.TARGET>17</MAVEN-COMPILER-PLUGIN.TARGET>
         <MAVEN-SUREFIRE-PLUGIN.VERSION>3.0.0-M6</MAVEN-SUREFIRE-PLUGIN.VERSION>
         <MAVEN-JAR-PLUGIN.VERSION>3.2.2</MAVEN-JAR-PLUGIN.VERSION>
-        <JSON-VALUES.VERSION>12.4.0</JSON-VALUES.VERSION>
+        <JSON-VALUES.VERSION>13.0.0</JSON-VALUES.VERSION>
         <MAVEN-JAVADOC-PLUGIN.VERSION>3.3.2</MAVEN-JAVADOC-PLUGIN.VERSION>
         <sonar.organization>imrafaelmerino</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <MONGODB-DRIVER-CORE.VERSION>4.11.1</MONGODB-DRIVER-CORE.VERSION>
     </properties>
 
     <build>
@@ -137,7 +138,7 @@
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver-core</artifactId>
-            <version>4.6.1</version>
+            <version>${MONGODB-DRIVER-CORE.VERSION}</version>
             <scope>provided</scope>
         </dependency>
 
