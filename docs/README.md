@@ -91,7 +91,7 @@ For Java 17 or higher:
 
 <dependency>
     <groupId>com.github.imrafaelmerino</groupId>
-    <artifactId>mongo-values/artifactId>
+    <artifactId>mongo-values</artifactId>
     <version>1.0.3</version>
 </dependency>
 ```
