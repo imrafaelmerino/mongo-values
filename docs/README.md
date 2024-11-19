@@ -1,7 +1,6 @@
 <img src="./logo/package_twitter_if9bsyj4/base/full/coverphoto/base_logo_white_background.png" alt="logo"/>
 
 [![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/1.0.3)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/1.0.3/jar)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=imrafaelmerino_json-values&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=imrafaelmerino_mongo-values)
 
 - [Introduction](#intro)
 - [Requirements](#requirements)
