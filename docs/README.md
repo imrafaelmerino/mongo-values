@@ -4,7 +4,7 @@
 
 - [Introduction](#intro)
 - [Requirements](#requirements)
-- [Installation](#installation)
+- [Installation](#inst)
 
 ## <a name="intro"><a/> Introduction 
 
