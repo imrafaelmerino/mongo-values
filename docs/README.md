@@ -1,6 +1,6 @@
 <img src="./logo/package_twitter_if9bsyj4/base/full/coverphoto/base_logo_white_background.png" alt="logo"/>
 
-[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/1.0.3)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/1.0.3/jar)
+[![Maven](https://img.shields.io/maven-central/v/com.github.imrafaelmerino/mongo-values/2.0.0)](https://search.maven.org/artifact/com.github.imrafaelmerino/mongo-values/2.0.0/jar)
 
 - [Introduction](#intro)
 - [Requirements](#requirements)
