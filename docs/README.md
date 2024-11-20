@@ -96,5 +96,16 @@ For Java 17 or higher:
 </dependency>
 ```
 
+For Java 21 or higher:
+
+```xml
+
+<dependency>
+    <groupId>com.github.imrafaelmerino</groupId>
+    <artifactId>mongo-values</artifactId>
+    <version>2.0.0</version>
+</dependency>
+```
+
 Choose the appropriate version according to your Java runtime.
 
